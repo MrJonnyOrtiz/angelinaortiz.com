@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.38c506c5.css",
+    "main.js": "/static/js/main.cca5793e.js",
+    "static/media/gAtMarket.jpeg": "/static/media/gAtMarket.81d1df55bc6002182ee8.jpeg",
+    "static/media/footer.png": "/static/media/footer.9fe9e968b1b7b647aaf7.png",
+    "static/media/gLogo.png": "/static/media/gLogo.12b0acec52fa5c064c66.png",
+    "index.html": "/index.html",
+    "main.38c506c5.css.map": "/static/css/main.38c506c5.css.map",
+    "main.cca5793e.js.map": "/static/js/main.cca5793e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38c506c5.css",
+    "static/js/main.cca5793e.js"
+  ]
+}
