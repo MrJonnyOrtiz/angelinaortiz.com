@@ -1,0 +1,78 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless Contact Us form for angelinaortiz.com
+Metadata:
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+    - Label:
+        default: Configuration
+      Parameters:
+      - Subject
+      - ToEmailAddress
+      - ReCaptchaSecret
+Parameters:
+  Subject:
+    Type: String
+    Description: Contact us email subject
+  ToEmailAddress:
+    Type: String
+    Description: Email address you want contact form submissions to go to
+  ReCaptchaSecret:
+    Type: String
+    Description: Your Google reCAPTCHA secret
+Resources:
+  ContactUsSNSTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName:
+        Fn::Join:
+        - ''
+        - - Ref: AWS::StackName
+          - ' Topic'
+      Subscription:
+      - Endpoint:
+          Ref: ToEmailAddress
+        Protocol: email
+      TopicName:
+        Fn::Join:
+        - ''
+        - - Ref: AWS::StackName
+          - -topic
+  ContactUsFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Timeout: 5
+      CodeUri: s3://angelinaortiz.com-serverless-contact-us/1c675a08db25dbe57ee01cf0129b5d59
+      Runtime: nodejs16.x
+      Policies:
+      - SNSPublishMessagePolicy:
+          TopicName:
+            Fn::GetAtt:
+            - ContactUsSNSTopic
+            - TopicName
+      Events:
+        PostEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
+      Environment:
+        Variables:
+          ReCaptchaSecret:
+            Ref: ReCaptchaSecret
+          ContactUsSNSTopic:
+            Ref: ContactUsSNSTopic
+          Subject:
+            Ref: Subject
+Outputs:
+  ApiUrl:
+    Description: URL of your API endpoint
+    Value:
+      Fn::Join:
+      - ''
+      - - https://
+        - Ref: ServerlessRestApi
+        - .execute-api.
+        - Ref: AWS::Region
+        - .amazonaws.com/Prod
