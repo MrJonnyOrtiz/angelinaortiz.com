@@ -5,7 +5,7 @@ const media = [
       id: 1,
       title: "Bach Cello Suite #2",
       description: "In D minor Movement 4",
-      url: "https://youtu.be/DWoSLEXn7IU",
+      url: "DWoSLEXn7IU",
    },
 ];
 
