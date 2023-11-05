@@ -3,21 +3,9 @@ import PropTypes from "prop-types";
 const media = [
    {
       id: 1,
-      title: "Media 1",
-      description: "Media 1",
-      url: "0hOTJJyKVBM",
-   },
-   {
-      id: 2,
-      title: "Media 2",
-      description: "Media 2",
-      url: "0hOTJJyKVBM",
-   },
-   {
-      id: 3,
-      title: "Media 3",
-      description: "Media 3",
-      url: "0hOTJJyKVBM",
+      title: "Bach Cello Suite #2",
+      description: "In D minor Movement 4",
+      url: "https://youtu.be/DWoSLEXn7IU",
    },
 ];
 
