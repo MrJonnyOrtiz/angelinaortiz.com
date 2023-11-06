@@ -1,6 +1,4 @@
-import gPortrait from "../media/gPortrait.jpeg";
 import candid from "../media/gAtMarket.jpeg";
-import gAtSCF from "../media/gAtSCF.jpeg";
 import fb from "../media/fb.png";
 import insta from "../media/insta.png";
 

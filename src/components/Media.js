@@ -1,5 +1,7 @@
 import PropTypes from "prop-types";
 
+import gAtSCF from "../media/gAtSCF.jpeg";
+
 const media = [
    {
       id: 1,
@@ -31,7 +33,7 @@ export default function Media() {
          <h2 className="text-xl mb-5 font-semibold">
             Juliet and I love to perform.
          </h2>
-         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 mb-72">
+         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 ">
             {media.map((media) => (
                <div key={media.id} className="place-self-center ">
                   <p className="text-sm">{media.title}</p>
@@ -39,6 +41,10 @@ export default function Media() {
                   <YoutubeEmbed embedId={media.url} title={media.title} />
                </div>
             ))}
+            <img
+               src={gAtSCF}
+               alt="Juliet and I performing for the SCF Presidential Quartet"
+            />
          </div>
       </div>
    );
