@@ -9,6 +9,12 @@ const media = [
       description: "In D minor Movement 4",
       url: "DWoSLEXn7IU",
    },
+   {
+      id: 2,
+      title: "Duet for Viola and Cello",
+      description: "In E-Flat Major",
+      url: "MFeWeaQkFjQ",
+   },
 ];
 
 const YoutubeEmbed = ({ embedId, title }) => (
