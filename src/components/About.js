@@ -1,4 +1,3 @@
-import candid from "../media/gAtMarket.jpeg";
 import fb from "../media/fb.png";
 import insta from "../media/insta.png";
 
@@ -62,14 +61,9 @@ export default function About({ onTab }) {
             <div className="relative left-1/2 -translate-x-1/2 md:w-1/2 py-3">
                <img
                   className=""
-                  src={candid}
-                  alt="Angelina playing at a farmer's market"
+                  src="https://gigi-website-pics.s3.amazonaws.com/gProHeadshot1.webp"
+                  alt="Angelina headshot"
                />
-               {/* <img
-                  className="hidden md:block absolute -top-8 -right-12 w-1/2 "
-                  src={gAtSCF}
-                  alt="Angelina playing at a SCF"
-               /> */}
             </div>
          </div>
       </div>
