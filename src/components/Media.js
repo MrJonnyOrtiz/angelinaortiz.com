@@ -11,8 +11,8 @@ const media = [
    },
    {
       id: 2,
-      title: "Duet for Viola and Cello",
-      description: "In E-Flat Major",
+      title: "Beethoven Eyeglass Duo for Viola and Cello",
+      description: "In E-Flat Major Movement 2",
       url: "MFeWeaQkFjQ",
    },
 ];
