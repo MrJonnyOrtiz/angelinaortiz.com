@@ -20,7 +20,7 @@ export default function About({ onTab }) {
                         I have a passion for music, performing with{" "}
                         <span className="italic">Juliet</span> - my cello -
                         for&nbsp;
-                        {new Date().getFullYear() - 2015} years, and singing
+                        {new Date().getFullYear() - 2013} years, and singing
                         too!
                      </p>
                      <p className="md:pb-5">
