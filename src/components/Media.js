@@ -91,8 +91,9 @@ const YoutubeEmbed = ({ embedId, title }) => (
          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
          allowFullScreen
          title={title}
-         width="400"
-         height="300"
+         className="w-full h-auto"
+         // width="400"
+         // height="300"
       />
    </div>
 );
@@ -107,10 +108,13 @@ export default function Media() {
          <h2 className="text-2xl mb-5 font-semibold">
             Juliet and I love to perform.
          </h2>
-         <h3 className="text-xl tracking-widest mb-5 border-b-4">Videos</h3>
-         <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+         <h3 className="text-2xl tracking-widest mb-5 border-b-4">Videos</h3>
+         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 px-5">
             {media.map((media) => (
-               <div key={media.id} className="place-self-center ">
+               <div
+                  key={media.id}
+                  className=" bg-[#F53DAE] rounded flex-none px-3  snap-always snap-center"
+               >
                   <p className="text-xl ">
                      {media.title}
                      <br />
@@ -121,12 +125,12 @@ export default function Media() {
             ))}
          </div>
 
-         <h3 className="text-xl tracking-widest mb-5 border-b-4">Pics</h3>
-         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+         <h3 className="text-2xl tracking-widest mt-5 mb-5 border-b-4">Pics</h3>
+         {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"> */}
+         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 px-5">
             {images.map((image) => (
                <img
-                  width="300"
-                  height="400"
+                  className="border sm:w-full md:w-1/2 lg:w-1/3 h-auto flex-none snap-always snap-center"
                   key={image.id}
                   src={image.url}
                   alt={image.alt}
