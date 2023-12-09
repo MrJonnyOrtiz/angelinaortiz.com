@@ -109,7 +109,7 @@ export default function Media() {
             Juliet and I love to perform.
          </h2>
          <h3 className="text-2xl tracking-widest mb-5 border-b-4">Videos</h3>
-         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 px-5">
+         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 p-5">
             {media.map((media) => (
                <div
                   key={media.id}
@@ -127,7 +127,7 @@ export default function Media() {
 
          <h3 className="text-2xl tracking-widest mt-5 mb-5 border-b-4">Pics</h3>
          {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"> */}
-         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 px-5">
+         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 p-5">
             {images.map((image) => (
                <img
                   className="border sm:w-full md:w-1/2 lg:w-1/3 h-auto flex-none snap-always snap-center"
