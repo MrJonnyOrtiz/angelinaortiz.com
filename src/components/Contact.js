@@ -98,7 +98,7 @@ export default function Contact() {
          className="grid grid-cols-1 content-start justify-items-center"
       >
          <h3 className="text-2xl mb-5 font-semibold text-center">
-            Contact me!
+            Contact me for private lessons or gigs!
          </h3>
          {/* <!-- Contact form --> */}
          <form className="px-5" id="contact-us-form" onSubmit={handleSubmit}>

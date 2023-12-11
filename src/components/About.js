@@ -33,12 +33,12 @@ export default function About({ onTab }) {
                      <a
                         href="#contact"
                         onClick={() => onTab(3)}
-                        className="hover:underline"
+                        className="text-[#54A9FF] hover:underline"
                      >
                         Contact
                      </a>{" "}
-                     me if you have any questions. Visit me on my social media.
-                     I hope to hear from you soon!
+                     me for private lessons or gigs. Visit me on my social
+                     media. I hope to hear from you soon!
                   </h3>
                </div>
                <div className="flex flex-row justify-center mb-3">
