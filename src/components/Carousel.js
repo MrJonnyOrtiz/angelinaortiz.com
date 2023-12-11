@@ -71,7 +71,7 @@ export default function Carousel({ slides, name, openTab }) {
          },
          {
             root: carouselPics,
-            threshold: 0.8,
+            threshold: 1,
          }
       );
 
