@@ -85,7 +85,7 @@ export default function Tabs() {
                            className={openTab === 2 ? "block" : "hidden"}
                            id="link2"
                         >
-                           <Media />
+                           <Media openTab={openTab} />
                         </div>
                         <div
                            className={openTab === 3 ? "block" : "hidden"}

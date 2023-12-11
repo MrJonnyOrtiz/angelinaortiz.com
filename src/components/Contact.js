@@ -97,83 +97,80 @@ export default function Contact() {
          id="contact"
          className="grid grid-cols-1 content-start justify-items-center"
       >
-         <div className="">
-            {/* <!-- Contact form --> */}
-            <form className="px-5" id="contact-us-form" onSubmit={handleSubmit}>
-               {success.length > 0 && (
-                  <h3 className="text-green-500 text-center font-bold mb-5">
-                     {success}
-                  </h3>
-               )}
-               {error.length > 0 && (
-                  <h3 className="text-red-500 text-center font-bold mb-5">
-                     {error}
-                  </h3>
-               )}
+         <h3 className="text-2xl mb-5 font-semibold text-center">
+            Contact me!
+         </h3>
+         {/* <!-- Contact form --> */}
+         <form className="px-5" id="contact-us-form" onSubmit={handleSubmit}>
+            {success.length > 0 && (
+               <h4 className="text-green-500 text-center font-bold mb-5">
+                  {success}
+               </h4>
+            )}
+            {error.length > 0 && (
+               <h4 className="text-red-500 text-center font-bold mb-5">
+                  {error}
+               </h4>
+            )}
 
-               <label htmlFor="name" className="block my-3">
-                  <span className="block text-sm font-medium">
-                     Your Full Name
-                  </span>
-                  <input
-                     type="text"
-                     className="text-black pl-3"
-                     id="name"
-                     name="name"
-                     autoComplete="name"
-                     value={fullName}
-                     onChange={(e) => setFullName(e.target.value)}
-                  />
-               </label>
-               <label className="block my-3">
-                  <span className="block text-sm font-medium">Your Email</span>
-                  <input
-                     type="email"
-                     className="peer text-black pl-3 pr-9"
-                     name="email"
-                     id="email"
-                     value={email}
-                     onChange={(e) => setEmail(e.target.value)}
-                  />
-                  <p id="emailHelp" className="text-xs italic">
-                     We'll never share your email with anyone else.
-                  </p>
-                  <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-                     Please provide a valid email address.
-                  </p>
-               </label>
-               <label htmlFor="message" className="my-3">
-                  <span className="block text-sm font-medium">
-                     Your message
-                  </span>
-                  <textarea
-                     className="text-black pl-3 pr-12"
-                     id="message"
-                     name="message"
-                     rows="4"
-                     value={message}
-                     onChange={(e) => setMessage(e.target.value)}
-                  ></textarea>
-               </label>
-               <div className="my-3">
-                  <ReCAPTCHA
-                     sitekey={SECRET_KEY}
-                     ref={captchaRef}
-                     onChange={handleOnChange}
-                  />
-               </div>
-               <div className="mb-24">
-                  <button
-                     type="submit"
-                     id="submitBtn"
-                     className="rounded bg-white text-black font-bold py-2 px-4 my-3 hover:text-white hover:bg-gray-700 animate-pulse"
-                     hidden={!hasCaptchaToken ? "hidden" : ""}
-                  >
-                     Send Message!
-                  </button>
-               </div>
-            </form>
-         </div>
+            <label htmlFor="name" className="block my-3">
+               <span className="block text-sm font-medium">Your Full Name</span>
+               <input
+                  type="text"
+                  className="text-black pl-3"
+                  id="name"
+                  name="name"
+                  autoComplete="name"
+                  value={fullName}
+                  onChange={(e) => setFullName(e.target.value)}
+               />
+            </label>
+            <label className="block my-3">
+               <span className="block text-sm font-medium">Your Email</span>
+               <input
+                  type="email"
+                  className="peer text-black pl-3 pr-9"
+                  name="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+               />
+               <p id="emailHelp" className="text-xs italic">
+                  We'll never share your email with anyone else.
+               </p>
+               <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                  Please provide a valid email address.
+               </p>
+            </label>
+            <label htmlFor="message" className="my-3">
+               <span className="block text-sm font-medium">Your message</span>
+               <textarea
+                  className="text-black pl-3 pr-12"
+                  id="message"
+                  name="message"
+                  rows="4"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+               ></textarea>
+            </label>
+            <div className="my-3">
+               <ReCAPTCHA
+                  sitekey={SECRET_KEY}
+                  ref={captchaRef}
+                  onChange={handleOnChange}
+               />
+            </div>
+            <div className="my-24">
+               <button
+                  type="submit"
+                  id="submitBtn"
+                  className="rounded bg-white text-black font-bold py-2 px-4 my-3 hover:text-white hover:bg-gray-700 animate-pulse"
+                  hidden={!hasCaptchaToken ? "hidden" : ""}
+               >
+                  Send Message!
+               </button>
+            </div>
+         </form>
       </div>
    );
 }

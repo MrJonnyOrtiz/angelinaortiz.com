@@ -1,26 +1,30 @@
-import PropTypes from "prop-types";
+import Carousel from "./Carousel";
 
 const media = [
    {
       id: 1,
+      type: "video",
       title: "Bach Cello Suite #2",
       description: "In D minor Movement 4",
       url: "DWoSLEXn7IU",
    },
    {
       id: 2,
+      type: "video",
       title: "Beethoven Eyeglass Duo for Viola and Cello",
       description: "In E-Flat Major Movement 2",
       url: "MFeWeaQkFjQ",
    },
    {
       id: 3,
+      type: "video",
       title: "Bach Cello Suite #1",
       description: "In G Major Movement VI. Gigue",
       url: "N6YU3QZqW7M",
    },
    {
       id: 4,
+      type: "video",
       title: "Gabriel Faure",
       description: "Elegie",
       url: "vXGwJFF6iIw",
@@ -28,115 +32,80 @@ const media = [
 ];
 const images = [
    {
-      id: 1,
+      id: 5,
+      type: "image",
       title: "Angelina Headshot",
-      alt: "Angelina Headshot",
+      description: "Angelina Headshot",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProHeadshot2.webp",
    },
    {
-      id: 2,
+      id: 6,
+      type: "image",
       title: "Angelina in the SCF Presidential Quartet, SCF Foundation Scholarship Luncheon 2022",
-      alt: "Angelina in the SCF Presidential Quartet, SCF Foundation Scholarship Luncheon 2022",
+      description:
+         "Angelina in the SCF Presidential Quartet, SCF Foundation Scholarship Luncheon 2022",
       url: "https://gigi-website-pics.s3.amazonaws.com/g2022SCFfoundationScholarshipLuncheonQuartetPerformance.webp",
    },
    {
-      id: 3,
+      id: 7,
+      type: "image",
       title: "Angelina and Juliet 1",
-      alt: "Angelina and Juliet 1",
+      description: "Angelina and Juliet 1",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProGAndJ1.webp",
    },
    {
-      id: 4,
+      id: 8,
+      type: "image",
       title: "Angelina and Juliet 3",
-      alt: "Angelina and Juliet 3",
+      description: "Angelina and Juliet 3",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProGAndJ3.webp",
    },
    {
-      id: 5,
+      id: 9,
+      type: "image",
       title: "Angelina and Juliet 4",
-      alt: "Angelina and Juliet 4",
+      description: "Angelina and Juliet 4",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProGAndJ4.webp",
    },
    {
-      id: 6,
+      id: 10,
+      type: "image",
       title: "Angelina and Juliet 5",
-      alt: "Angelina and Juliet 5",
+      description: "Angelina and Juliet 5",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProGAndJ5.webp",
    },
    {
-      id: 7,
+      id: 11,
+      type: "image",
       title: "Angelina and Juliet 2",
-      alt: "Angelina and Juliet 2",
+      description: "Angelina and Juliet 2",
       url: "https://gigi-website-pics.s3.amazonaws.com/gProGAndJ2.webp",
    },
    {
-      id: 8,
+      id: 12,
+      type: "image",
       title: "Angelina in the SCF Presidential Quartet",
-      alt: "Angelina in the SCF Presidential Quartet",
+      description: "Angelina in the SCF Presidential Quartet",
       url: "https://gigi-website-pics.s3.amazonaws.com/gAtSCF.webp",
    },
    {
-      id: 9,
+      id: 13,
+      type: "image",
       title: "Angelina at Outdoor Market",
-      alt: "Angelina at Outdoor Market",
+      description: "Angelina at Outdoor Market",
       url: "https://gigi-website-pics.s3.amazonaws.com/gAtMarket.webp",
    },
 ];
 
-const YoutubeEmbed = ({ embedId, title }) => (
-   <div className="mb-5">
-      <iframe
-         src={`https://www.youtube.com/embed/${embedId}`}
-         frameBorder="0"
-         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-         allowFullScreen
-         title={title}
-         className="w-full h-auto"
-         // width="400"
-         // height="300"
-      />
-   </div>
-);
-
-YoutubeEmbed.propTypes = {
-   embedId: PropTypes.string.isRequired,
-};
-
-export default function Media() {
+export default function Media({ openTab }) {
    return (
       <div id="media" className="container mx-auto text-center px-5 lg:px-32">
          <h2 className="text-2xl mb-5 font-semibold">
             Juliet and I love to perform.
          </h2>
-         <h3 className="text-2xl tracking-widest mb-5 border-b-4">Videos</h3>
-         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 p-5">
-            {media.map((media) => (
-               <div
-                  key={media.id}
-                  className=" bg-[#F53DAE] rounded flex-none px-3  snap-always snap-center"
-               >
-                  <p className="text-xl ">
-                     {media.title}
-                     <br />
-                     {media.description}
-                  </p>
-                  <YoutubeEmbed embedId={media.url} title={media.title} />
-               </div>
-            ))}
-         </div>
+         <Carousel slides={media} name="Videos" openTab={openTab} />
 
-         <h3 className="text-2xl tracking-widest mt-5 mb-5 border-b-4">Pics</h3>
-         {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3"> */}
-         <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-5 p-5">
-            {images.map((image) => (
-               <img
-                  className="border sm:w-full md:w-1/2 lg:w-1/3 h-auto flex-none snap-always snap-center"
-                  key={image.id}
-                  src={image.url}
-                  alt={image.alt}
-               />
-            ))}
-         </div>
+         <Carousel slides={images} name="Pics" openTab={openTab} />
       </div>
    );
 }
