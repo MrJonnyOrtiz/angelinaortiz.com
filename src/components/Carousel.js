@@ -45,7 +45,7 @@ export default function Carousel({ slides, name, openTab }) {
          },
          {
             root: carouselVideos,
-            threshold: 0.5,
+            threshold: 0.75,
          }
       );
 
