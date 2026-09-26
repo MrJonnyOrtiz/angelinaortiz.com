@@ -1,9 +1,21 @@
-name: CI/CD
+# ============================================================
+# DISABLED — legacy CRA auto-deploy.
+#
+# This workflow used to rebuild the old Create-React-App site and
+# `s3 sync --delete` it to s3://angelinaortiz.com on every push to master.
+#
+# The live site is now the static performer-template, deployed via
+# performer-template/deploy-live.sh. If this workflow ran on push it would
+# REBUILD THE OLD APP AND OVERWRITE THE NEW SITE — so its automatic trigger
+# has been removed. It can now only be run manually (workflow_dispatch), and
+# only if you intentionally want to restore the old CRA app.
+#
+# To fully retire it, delete this file.
+# ============================================================
+name: CI/CD (legacy CRA — DISABLED, manual only)
 
 on:
-   push:
-      branches:
-         - master
+   workflow_dispatch: {}
 
 jobs:
    build:
